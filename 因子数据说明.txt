@@ -1,0 +1,136 @@
+mkv 市值因子
+
+factor_macd ：
+指数平滑移动平均线 差离值（MACD_DIFF）
+因子描述及计算方法：
+SHORT = 12, LONG = 26, M = 9;
+DIFF = EMA(CLOSE, SHORT) - EMA(CLOSE, LONG)
+
+factor_rsi10：
+相对强弱指标 RSI10（RSI10）
+因子描述及计算方法：
+LC = REF(CLOSE, 1);
+RSI = MA(MAX(CLOSE - LC, 0), 10) / MA(ABS(CLOSE - LC), 10) * 100
+
+factor_mtm：
+动量线 MTM（MTM）
+因子描述及计算方法：
+N = 14;
+MTM = CLOSE – REF(CLOSE, N)
+
+factor_bias5：
+乖离率 BIAS5（BIAS5）
+因子描述及计算方法：
+(CLOSE - MA(CLOSE, 5)) / MA(CLOSE, 5) * 100
+
+factor_volt20：
+近 20 日波动率（VOLT20）
+因子描述及计算方法：
+20 日收盘价的标准差
+
+factor_mdd20：
+近 20 日最大回撤（MDD20）
+因子描述及计算方法：
+20 日收盘价的最大回撤
+
+factor_pe：
+市盈率ttm（pe_ratio_ttm）
+因子描述及计算方法：
+总市值 / 归属母公司净利润ttm;
+market_cap_3 / net_profit_parent_company_ttm_0
+
+factor_pb：
+市净率ttm（pb_ratio_ttm）
+因子描述及计算方法：
+当前股票总市值 / 归属母公司股东权益合计ttm;
+market_cap_3 / equity_parent_company_ttm_0
+
+factor_ev：
+企业倍数ttm（ev_to_ebitda_ttm）
+因子描述及计算方法：
+企业价值ttm / 息税折旧摊销前利润 ttm;
+ev_ttm / ebitda_ttm
+
+factor_inc：
+营业总收入同比增长率ttm（inc_revenue_ttm）
+因子描述及计算方法：
+营业总收入ttm / 上年营业总收入ttm - 1;
+revenue_ttm_0 / revenue_ttm_4 - 1
+
+factor_return：
+净资产收益率ttm（return_on_equity_ttm）
+因子描述及计算方法：
+归属母公司净利润ttm * 2 / (贵司母公司股东权益合计ttm + 上期报表披露归属母公司的股东权益合计ttm);
+net_profit_parent_company_ttm_0 / ((equity_parent_company_ttm_0+equity_parent_company_ttm_1) / 2)
+
+factor_du：
+净利率（杜邦分析）ttm（du_profit_margin_ttm）
+因子描述及计算方法：
+净利润ttm / 利润总额ttm;
+net_profit_ttm_0 / profit_before_tax_ttm_0
+
+factor_vol20：
+平均换手率(%) VOL20（VOL20）
+因子描述及计算方法：
+HSL =100* VOLUME / CAPITAL;
+VOL20= MA(HSL, 20)
+
+factor_qtyr：
+5 日 20 日量比（QTYR_5_20）
+因子描述及计算方法：
+N=5, M=20;
+MA(VOLUME, N) / MA(VOLUME, M)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
